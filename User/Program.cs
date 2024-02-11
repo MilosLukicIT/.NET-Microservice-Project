@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using UserMicroservice.Data;
 using UserMicroservice.Entites;
+using UserMicroservice.Helpers;
 
 namespace UserMicroservice
 {
@@ -26,6 +27,7 @@ namespace UserMicroservice
 
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IUserRoleRepository, UserRoleRepository>();
+            builder.Services.AddScoped<IAuthenticationHelper, AuthenticationHelper>();
 
             builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
