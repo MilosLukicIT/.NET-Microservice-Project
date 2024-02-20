@@ -1,0 +1,6 @@
+@Generalizacija_HostAddress = http://localhost:5207
+
+GET {{Generalizacija_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
