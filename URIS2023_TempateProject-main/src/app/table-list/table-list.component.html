@@ -1,0 +1,121 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                        <!-- Menjamo naziv i podnaslov tabele - BACKLOG predstavlja jedinstveni naziv za pregled svih taskova u nekom sistemu -->
+                      <h4 class="card-title ">Backlog</h4>
+                      <p class="card-category">A backlog is a list of tasks required to support a larger strategic plan. For example, a product development context contains a prioritized list of items. The product team agrees to work on these projects next. Typical items on a product backlog include user stories, changes to existing functionality, and bug fixes.</p>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                            <!-- th tag predstavlja nazive kolona koje cemo imati - nazivi odgovaraju modelu (uz dodatak Actions) -->
+                              <thead class=" text-primary">
+                                  <th>
+                                      ID
+                                  </th>
+                                  <th>
+                                      Name
+                                  </th>
+                                  <th>
+                                    Description
+                                  </th>
+                                  <th>
+                                    Assignee
+                                  </th>
+                                  <th>
+                                    Actions
+                                  </th>
+                              </thead>
+                              <tbody>
+                                <!-- tr je tag kojim se definisu redovi tabele - koristimo ngFor za iteriranje kroz niz task -->
+                                <!-- td je tag kojim se definise svako pojedinacno polje -->
+                                  <tr *ngFor="let task of tasks">
+                                      <td>
+                                          {{task.id}}
+                                      </td>
+                                      <td>
+                                          {{task.title}}
+                                      </td>
+                                      <td>
+                                          {{task.description}}
+                                      </td>
+                                      <td>
+                                          {{task.assignee.userName}}
+                                      </td>
+                                      <td>
+                                        <!-- Svaka akcija ce predstavljati posebno dugme - stil dugmeta odgovara template-u koji koristimo -->
+                                        <!-- Koristi se klasa material-icons koja navodjenjem kljucne reci prepoznaje koji dizajn dugmeta da se iskoristi -->
+                                        <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon" (click)="openDialog(task)">
+                                            <i class="material-icons">edit</i>
+                                            <div class="ripple-container"></div>
+                                          </button>
+                                          <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon" (click)="deleteTask(task)">
+                                            <i class="material-icons">delete</i>
+                                            <div class="ripple-container"></div>
+                                          </button>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-danger">
+                    <!-- Kopirana je Backlog tabela uz promenu polja - ne prikazujemo ID jer on treba da ostane sakriven -->
+                    <h4 class="card-title ">Contributors</h4>
+                    <p class="card-category">Contribution activity is a great way to see what someone has been up to on GitHub. You can see a really concise view of proposed Pull Requests, open issues and commits.</p>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <th>
+                                  First name
+                                </th>
+                                <th>
+                                  Last name
+                                </th>
+                                <th>
+                                  Username
+                                </th>
+                                <th>
+                                  Actions
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let contributor of contributors">
+                                    <td>
+                                        {{contributor.firstName}}
+                                    </td>
+                                    <td>
+                                        {{contributor.lastName}}
+                                    </td>
+                                    <td>
+                                        {{contributor.userName}}
+                                    </td>
+                                    <td>
+                                      <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                          <i class="material-icons">edit</i>
+                                          <div class="ripple-container"></div>
+                                        </button>
+                                        <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                          <i class="material-icons">delete</i>
+                                          <div class="ripple-container"></div>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
