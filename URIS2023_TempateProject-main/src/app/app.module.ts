@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthconfigInterceptor } from './services/interceptor/authconfig.interceptor';
 import { UserPageComponent } from './user-page/user-page.component';
 import { MikimilaneComponent } from './services/mikimilane/mikimilane.component';
+import { AdmincompComponent } from './admincomp/admincomp.component';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { MikimilaneComponent } from './services/mikimilane/mikimilane.component'
     AppComponent,
     AdminLayoutComponent,
     MikimilaneComponent,
+    AdmincompComponent,
     
   ],
   providers: [{
