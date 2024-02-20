@@ -10,6 +10,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { LoginComponent } from './login/login.component';
 import { AuthconfigInterceptor } from './services/interceptor/authconfig.interceptor';
 import { UserPageComponent } from './user-page/user-page.component';
+import { MikimilaneComponent } from './services/mikimilane/mikimilane.component';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { UserPageComponent } from './user-page/user-page.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    MikimilaneComponent,
     
   ],
   providers: [{
