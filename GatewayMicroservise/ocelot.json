@@ -29,6 +29,23 @@
       "DownstreamPathTemplate": "/api/korisnik/{id}"
     },
     {
+      //Auth
+      "UpstreamPathTemplate": "/apigateway/korisnik/authenticate",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5232
+        }
+      ],
+      //Auth
+      "DownstreamPathTemplate": "/api/korisnik/authenticate"
+    }
+    ,
+
+    {
       //Uloga
       "UpstreamPathTemplate": "/apigateway/korisnik/uloga",
       "UpstreamHttpMethod": [ "Get", "Post" ],

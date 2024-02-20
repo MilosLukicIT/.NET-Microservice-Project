@@ -31,6 +31,7 @@ namespace GatewayMicroservise
                 app.UseSwaggerUI();
             }
 
+            
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
@@ -38,7 +39,7 @@ namespace GatewayMicroservise
 
             app.MapControllers();
 
-            app.UseOcelot().Wait();
+            await app.UseOcelot();
             app.Run();
         }
     }

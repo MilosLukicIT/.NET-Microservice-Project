@@ -23,7 +23,7 @@ namespace UserMicroservice.Data
         }
         public UserClass GetUserByEmail(string email)
         {
-            return context.Users.FirstOrDefault(e => (e.EmailKorisnika == email));
+            return context.Users.FirstOrDefault(e => e.EmailKorisnika == email);
         }
 
         public UserClass GetUserById(Guid userId)

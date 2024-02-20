@@ -13,11 +13,13 @@ namespace UserMicroservice.Helpers
 
         private readonly IConfiguration configuration;
         private readonly IUserRepository userRepository;
+        private readonly IUserRoleRepository userRoleRepository;
 
-        public AuthenticationHelper (IConfiguration configuration, IUserRepository userRepository)
+        public AuthenticationHelper (IConfiguration configuration, IUserRepository userRepository, IUserRoleRepository userRoleRepository)
         {
             this.configuration = configuration;
             this.userRepository = userRepository;
+            this.userRoleRepository = userRoleRepository;
         }
         public bool AuthenticationPrincipal(Principal principal)
         {
@@ -31,7 +33,8 @@ namespace UserMicroservice.Helpers
         public string GenerateJwt(Principal principal)
         {
             var user = userRepository.GetUserByEmail(principal.EmailKorisnika);
-            principal.NazivUloge = user.Uloga.NazivUloge;
+
+            principal.NazivUloge = userRoleRepository.GetUserRoleById((Guid)user.UlogaId).NazivUloge;
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 

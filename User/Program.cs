@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using System.IdentityModel.Tokens.Jwt;
 using UserMicroservice.Data;
 using UserMicroservice.Entites;
+using UserMicroservice.Helpers;
 
 namespace UserMicroservice
 {
@@ -17,6 +19,12 @@ namespace UserMicroservice
             .Build();
 
 
+            builder.Services.AddAuthentication(x =>
+            {
+            //    x.DefaultAuthenticateScheme =
+            });
+
+
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -26,6 +34,7 @@ namespace UserMicroservice
 
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IUserRoleRepository, UserRoleRepository>();
+            builder.Services.AddScoped<IAuthenticationHelper, AuthenticationHelper>();
 
             builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
