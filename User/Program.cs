@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.IdentityModel.Tokens.Jwt;
 using UserMicroservice.Data;
 using UserMicroservice.Entites;
 using UserMicroservice.Helpers;
@@ -16,6 +17,12 @@ namespace UserMicroservice
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json")
             .Build();
+
+
+            builder.Services.AddAuthentication(x =>
+            {
+            //    x.DefaultAuthenticateScheme =
+            });
 
 
             builder.Services.AddControllers();
