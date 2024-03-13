@@ -34,19 +34,19 @@ namespace UserMicroservice.Helpers
         {
             var user = userRepository.GetUserByEmail(principal.EmailKorisnika);
 
-            principal.NazivUloge = userRoleRepository.GetUserRoleById((Guid)user.UlogaId).NazivUloge;
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.Role, principal.NazivUloge)
+                new Claim("Role", userRoleRepository.GetUserRoleById((Guid)user.UlogaId).NazivUloge),
+                new Claim("Id", user.KorisnikId.ToString())
             };
 
             var token = new JwtSecurityToken(configuration["Jwt:Issuer"],
                                              configuration["Jwt:Issuer"],
                                              claims,
-                                             expires: DateTime.Now.AddMinutes(120),
+                                             expires: DateTime.Now.AddMinutes(15),
                                              signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

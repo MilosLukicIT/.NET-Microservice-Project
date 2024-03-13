@@ -1,8 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using UserMicroservice.Data;
 using UserMicroservice.Entites;
 using UserMicroservice.Helpers;
+using UserMicroservice.ServiceCalls;
 
 namespace UserMicroservice
 {
@@ -19,22 +21,19 @@ namespace UserMicroservice
             .Build();
 
 
-            builder.Services.AddAuthentication(x =>
-            {
-            //    x.DefaultAuthenticateScheme =
-            });
-
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<UserClassContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("UserDB")));
+            options.UseSqlServer(configuration.GetConnectionString("UserDB")));
 
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IUserRoleRepository, UserRoleRepository>();
             builder.Services.AddScoped<IAuthenticationHelper, AuthenticationHelper>();
+            builder.Services.AddScoped<ILoggerService, LoggerService>();
+            builder.Services.AddScoped<IKalendarService, KalendarService>();
 
             builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
@@ -48,9 +47,12 @@ namespace UserMicroservice
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+            app.UseCors(x => x
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
 
-            app.UseAuthorization();
+            //app.UseHttpsRedirection();
 
             app.MapControllers();
 

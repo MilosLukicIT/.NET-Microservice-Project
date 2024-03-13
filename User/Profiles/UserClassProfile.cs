@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using UserMicroservice.Entites;
-using UserMicroservice.Entites.Confirmation;
 using UserMicroservice.Models.DTO;
 
 namespace UserMicroservice.Profiles
@@ -12,7 +11,8 @@ namespace UserMicroservice.Profiles
             CreateMap<UserClass, UserClassDto>().ReverseMap();
             CreateMap<UserClassCreationDto, UserClass>().ReverseMap();
             CreateMap<UserClassUpdateDto, UserClass>().ReverseMap();
-            CreateMap<UserClassConfirmation, UserClass>().ReverseMap();
+            CreateMap<UserClass, UserClassUpdateDto>().ReverseMap();
+            CreateMap<UserClass, UserClassViewDto>().ReverseMap();
         }
     }
 }

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayMicroservice", "GatewayMicroservice.csproj", "{C281A7D8-9F97-4C87-B211-28A49088F14A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C281A7D8-9F97-4C87-B211-28A49088F14A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C281A7D8-9F97-4C87-B211-28A49088F14A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C281A7D8-9F97-4C87-B211-28A49088F14A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C281A7D8-9F97-4C87-B211-28A49088F14A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE34BD8B-C730-4599-B831-AAB2A4F144BD}
+	EndGlobalSection
+EndGlobal

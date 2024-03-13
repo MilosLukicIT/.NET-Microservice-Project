@@ -1,0 +1,1574 @@
+{
+  "Routes": [
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      //Endpoint sa klijentske strane - korisnik
+      "UpstreamPathTemplate": "/apigateway/korisnik",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5232
+        }
+      ],
+
+      //Endpoint ka mikroservisu - korisnik
+      "DownstreamPathTemplate": "/api/korisnik"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      },
+      //Endpoint sa klijentske strane - korisnik
+      "UpstreamPathTemplate": "/apigateway/korisnik",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5232
+        }
+      ],
+      //Endpoint ka mikroservisu - korisnik
+      "DownstreamPathTemplate": "/api/korisnik"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/apigateway/korisnik/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5232
+        }
+      ],
+      "DownstreamPathTemplate": "/api/korisnik/{id}"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      },
+      "UpstreamPathTemplate": "/apigateway/korisnik/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5232
+        }
+      ],
+      "DownstreamPathTemplate": "/api/korisnik/{id}"
+    },
+    {
+      //Auth
+      "UpstreamPathTemplate": "/apigateway/korisnik/authenticate",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5232
+        }
+      ],
+      //Auth
+      "DownstreamPathTemplate": "/api/korisnik/authenticate"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      //Uloga
+      "UpstreamPathTemplate": "/apigateway/korisnik/uloga",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5232
+        }
+      ],
+      "DownstreamPathTemplate": "/api/korisnik/uloga"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      },
+      //Uloga
+      "UpstreamPathTemplate": "/apigateway/korisnik/uloga",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5232
+        }
+      ],
+      "DownstreamPathTemplate": "/api/korisnik/uloga"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      },
+      "UpstreamPathTemplate": "/apigateway/korisnik/uloga/{id}",
+      "UpstreamHttpMethod": [ "Put", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5232
+        }
+      ],
+      "DownstreamPathTemplate": "/api/korisnik/uloga/{id}"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "UpstreamPathTemplate": "/apigateway/korisnik/uloga/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5232
+        }
+      ],
+      "DownstreamPathTemplate": "/api/korisnik/uloga/{id}"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin" ]
+      },
+      //Projekat - Drazen
+      "UpstreamPathTemplate": "/apigateway/projekat",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5036
+        }
+      ],
+      "DownstreamPathTemplate": "/api/projekat"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      //Projekat - Drazen
+      "UpstreamPathTemplate": "/apigateway/projekat",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5036
+        }
+      ],
+      "DownstreamPathTemplate": "/api/projekat"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/apigateway/projekat/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5036
+        }
+      ],
+      "DownstreamPathTemplate": "/api/projekat/{id}"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      "UpstreamPathTemplate": "/apigateway/projekat/{id}",
+      "UpstreamHttpMethod": [ "Put" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5036
+        }
+      ],
+      "DownstreamPathTemplate": "/api/projekat/{id}"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin" ]
+      },
+      "UpstreamPathTemplate": "/apigateway/projekat/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5036
+        }
+      ],
+      "DownstreamPathTemplate": "/api/projekat/{id}"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin" ]
+      },
+      //Tim - Drazen
+      "UpstreamPathTemplate": "/apigateway/projekat/tim",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5036
+        }
+      ],
+      "DownstreamPathTemplate": "/api/projekat/tim"
+    },
+
+
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      //Tim - Drazen
+      "UpstreamPathTemplate": "/apigateway/projekat/tim",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5036
+        }
+      ],
+      "DownstreamPathTemplate": "/api/projekat/tim"
+    },
+
+
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "UpstreamPathTemplate": "/apigateway/projekat/tim/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5036
+        }
+      ],
+      "DownstreamPathTemplate": "/api/projekat/tim/{id}"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      },
+      "UpstreamPathTemplate": "/apigateway/projekat/tim/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5036
+        }
+      ],
+      "DownstreamPathTemplate": "/api/projekat/tim/{id}"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      "UpstreamPathTemplate": "/apigateway/projekat/tim/{id}",
+      "UpstreamHttpMethod": [ "Put" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5036
+        }
+      ],
+      "DownstreamPathTemplate": "/api/projekat/tim/{id}"
+    },
+
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      //Stavka - Mina
+      "UpstreamPathTemplate": "/apigateway/stavka",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      //Stavka - Mina
+      "UpstreamPathTemplate": "/apigateway/stavka",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "UpstreamPathTemplate": "/apigateway/stavka/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/{id}"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+
+      "UpstreamPathTemplate": "/apigateway/stavka/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/{id}"
+    },
+
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      //Komentar - Mina
+      "UpstreamPathTemplate": "/apigateway/stavka/komentar",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/komentar"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/apigateway/stavka/komentar/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/komentar/{id}"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      //Story - Mina
+      "UpstreamPathTemplate": "/apigateway/stavka/story",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/story"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "UpstreamPathTemplate": "/apigateway/stavka/story/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/story/{id}"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+
+      "UpstreamPathTemplate": "/apigateway/stavka/story/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/story/{id}"
+    },
+
+    //Ovde sam stao - prvo testirati
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      //Story point - Mina
+      "UpstreamPathTemplate": "/apigateway/stavka/story/storypoint",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/story/storypoint"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      //Story point - Mina
+      "UpstreamPathTemplate": "/apigateway/stavka/story/storypoint",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/story/storypoint"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/apigateway/stavka/story/storypoint/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/story/storypoint/{id}"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      "UpstreamPathTemplate": "/apigateway/stavka/story/storypoint/{id}",
+      "UpstreamHttpMethod": [ "Put", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/story/storypoint/{id}"
+    },
+
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      //Task - Mina
+      "UpstreamPathTemplate": "/apigateway/stavka/task",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/task"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      //Task - Mina
+      "UpstreamPathTemplate": "/apigateway/stavka/task",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/task"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/apigateway/stavka/task/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/task/{id}"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      "UpstreamPathTemplate": "/apigateway/stavka/task/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/task/{id}"
+    },
+
+
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      //SubTask - Mina
+      "UpstreamPathTemplate": "/apigateway/stavka/task/subtask",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/task/subtask"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      //SubTask - Mina
+      "UpstreamPathTemplate": "/apigateway/stavka/task/subtask",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5228
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/task/subtask"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+
+      "UpstreamPathTemplate": "/apigateway/stavka/task/subtask/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5232
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/task/subtask/{id}"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      "UpstreamPathTemplate": "/apigateway/stavka/task/subtask/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5232
+        }
+      ],
+      "DownstreamPathTemplate": "/api/stavka/task/subtask/{id}"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      //Kalendar - Filip
+
+      "UpstreamPathTemplate": "/apigateway/kalendar",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5231
+        }
+      ],
+
+      "DownstreamPathTemplate": "/api/kalendar"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      },
+      //Kalendar - Filip
+
+      "UpstreamPathTemplate": "/apigateway/kalendar",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5231
+        }
+      ],
+
+      "DownstreamPathTemplate": "/api/kalendar"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "UpstreamPathTemplate": "/apigateway/kalendar/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5231
+        }
+      ],
+      "DownstreamPathTemplate": "/api/kalendar/{id}"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      },
+      "UpstreamPathTemplate": "/apigateway/kalendar/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5231
+        }
+      ],
+      "DownstreamPathTemplate": "/api/kalendar/{id}"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      //Sastanak - Filip
+
+      "UpstreamPathTemplate": "/apigateway/sastanak",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5231
+        }
+      ],
+
+      "DownstreamPathTemplate": "/api/kalendar/sastanak"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/apigateway/kalendar/sastanak/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5231
+        }
+      ],
+
+      "DownstreamPathTemplate": "/api/kalendar/sastanak/{id}"
+    },
+
+    /*{
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      //Individualni sastanak - Filip
+
+      "UpstreamPathTemplate": "/apigateway/kalendar/sastanak/individualni",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5231
+        }
+      ],
+
+      "DownstreamPathTemplate": "/api/kalendar/sastanak/individualni"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/apigateway/kalendar/sastanak/individualni/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5231
+        }
+      ],
+
+      "DownstreamPathTemplate": "/api/kalendar/sastanak/individualni/{id}"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      //Timski sastanak - Filip
+      "UpstreamPathTemplate": "/apigateway/kalendar/sastanak/timski",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5231
+        }
+      ],
+      "DownstreamPathTemplate": "/api/kalendar/sastanak/timski"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/apigateway/kalendar/sastanak/timski/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5231
+        }
+      ],
+      "DownstreamPathTemplate": "/api/kalendar/sastanak/timski/{id}"
+    },
+*/
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      //Neradni dan - Filip
+      "UpstreamPathTemplate": "/apigateway/kalendar/neradniDan",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5231
+        }
+      ],
+      "DownstreamPathTemplate": "/api/kalendar/neradniDan"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/apigateway/kalendar/neradniDan/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5231
+        }
+      ],
+      "DownstreamPathTemplate": "/api/kalendar/neradniDan/{id}"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      //Logovano vreme - Filip
+      "UpstreamPathTemplate": "/apigateway/logovanoVreme",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5240
+        }
+      ],
+      "DownstreamPathTemplate": "/api/logovanoVreme"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/apigateway/logovanoVreme/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5240
+        }
+      ],
+      "DownstreamPathTemplate": "/api/logovanoVreme/{id}"
+    },
+
+
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      //Scrum board - Dejana
+      "UpstreamPathTemplate": "/apigateway/scrumBoard",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5049
+        }
+      ],
+      "DownstreamPathTemplate": "/api/scrumBoard"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      //Scrum board - Dejana
+      "UpstreamPathTemplate": "/apigateway/scrumBoard",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5049
+        }
+      ],
+      "DownstreamPathTemplate": "/api/scrumBoard"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/apigateway/scrumBoard/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5049
+        }
+      ],
+      "DownstreamPathTemplate": "/api/scrumBoard/{id}"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      "UpstreamPathTemplate": "/apigateway/scrumBoard/{id}",
+      "UpstreamHttpMethod": [ "Put", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5049
+        }
+      ],
+      "DownstreamPathTemplate": "/api/scrumBoard/{id}"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      //Faza - Dejana
+      "UpstreamPathTemplate": "/apigateway/scrumBoard/faza",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5049
+        }
+      ],
+      "DownstreamPathTemplate": "/api/scrumBoard/faza"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      //Faza - Dejana
+      "UpstreamPathTemplate": "/apigateway/scrumBoard/faza",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5049
+        }
+      ],
+      "DownstreamPathTemplate": "/api/scrumBoard/faza"
+    },
+
+
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "UpstreamPathTemplate": "/apigateway/scrumBoard/faza/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5049
+        }
+      ],
+      "DownstreamPathTemplate": "/api/scrumBoard/faza/{id}"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+
+      "UpstreamPathTemplate": "/apigateway/scrumBoard/faza/{id}",
+      "UpstreamHttpMethod": [ "Put", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5049
+        }
+      ],
+      "DownstreamPathTemplate": "/api/scrumBoard/faza/{id}"
+    },
+
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      //Backlog - Dejana
+      "UpstreamPathTemplate": "/apigateway/backlog",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "DownstreamPathTemplate": "/api/backlog"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      //Backlog - Dejana
+      "UpstreamPathTemplate": "/apigateway/backlog",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "DownstreamPathTemplate": "/api/backlog"
+    },
+
+
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/apigateway/backlog/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "DownstreamPathTemplate": "/api/backlog/{id}"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      "UpstreamPathTemplate": "/apigateway/backlog/{id}",
+      "UpstreamHttpMethod": [ "Put", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "DownstreamPathTemplate": "/api/backlog/{id}"
+    },
+
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      },
+
+      //Production backlog - Dejana
+      "UpstreamPathTemplate": "/apigateway/backlog/productionBacklog",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "DownstreamPathTemplate": "/api/backlog/productionBacklog"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      //Production backlog - Dejana
+      "UpstreamPathTemplate": "/apigateway/backlog/productionBacklog",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "DownstreamPathTemplate": "/api/backlog/productionBacklog"
+    },
+
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+
+      "UpstreamPathTemplate": "/apigateway/backlog/productionBacklog/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "DownstreamPathTemplate": "/api/backlog/productionBacklog/{id}"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      },
+      "UpstreamPathTemplate": "/apigateway/backlog/productionBacklog/{id}",
+      "UpstreamHttpMethod": [ "Put", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "DownstreamPathTemplate": "/api/backlog/productionBacklog/{id}"
+    },
+
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      
+      //Sprint backlog - Dejana
+      "UpstreamPathTemplate": "/apigateway/backlog/sprintBacklog",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "DownstreamPathTemplate": "/api/backlog/sprintBacklog"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      //Sprint backlog - Dejana
+      "UpstreamPathTemplate": "/apigateway/backlog/sprintBacklog",
+      "UpstreamHttpMethod": [ "Post" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "DownstreamPathTemplate": "/api/backlog/sprintBacklog"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/apigateway/backlog/sprintBacklog/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "DownstreamPathTemplate": "/api/backlog/sprintBacklog/{id}"
+    },
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin, Product owner"
+      },
+      "UpstreamPathTemplate": "/apigateway/backlog/sprintBacklog/{id}",
+      "UpstreamHttpMethod": [ "Put", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "DownstreamPathTemplate": "/api/backlog/sprintBacklog/{id}"
+    },
+
+
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      },
+      "UpstreamPathTemplate": "/apigateway/logger",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5093
+        }
+      ],
+      "DownstreamPathTemplate": "/api/logger"
+    }
+
+
+
+
+
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5122"
+  }
+}

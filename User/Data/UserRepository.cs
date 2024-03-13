@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using System.Security.Cryptography;
 using UserMicroservice.Entites;
+using UserMicroservice.Models.DTO;
 
 namespace UserMicroservice.Data
 {
@@ -26,14 +27,21 @@ namespace UserMicroservice.Data
             return context.Users.FirstOrDefault(e => e.EmailKorisnika == email);
         }
 
-        public UserClass GetUserById(Guid userId)
+        public UserClassViewDto GetUserById(Guid userId)
         {
-            return context.Users.FirstOrDefault(e => e.KorisnikId == userId);
+            UserClassViewDto user = mapper.Map<UserClassViewDto>(context.Users.FirstOrDefault(e => e.KorisnikId == userId));
+            user.NazivUloge = context.UserRoles.FirstOrDefault(e => e.UlogaId == user.UlogaId).NazivUloge;
+            return user;
         }
 
-        public List<UserClass> GetUsers()
+        public List<UserClassViewDto> GetUsers()
         {
-            return context.Users.ToList();
+            List<UserClassViewDto> users = mapper.Map<List<UserClassViewDto>>(context.Users.ToList());
+            for (int i = 0; i < users.Count; i++)
+            {
+                users[i].NazivUloge = context.UserRoles.FirstOrDefault(e => e.UlogaId == users[i].UlogaId).NazivUloge;
+            }
+            return users;
         }
 
         public UserClass CreateUser(UserClass user)
@@ -49,11 +57,11 @@ namespace UserMicroservice.Data
 
         public void DeleteUser(Guid userId)
         {
-            var user = GetUserById(userId);
+            UserClass user = context.Users.FirstOrDefault(e => e.KorisnikId == userId);
             context.Remove(user);
         }
 
-        public void UpdateUser(UserClass user)
+        public UserClass UpdateUser(UserClass user)
         {
             try
             {
@@ -61,9 +69,25 @@ namespace UserMicroservice.Data
 
                 if (existingUser != null)
                 {
+                    if (user.LozinkaKorisnika != null && VerifyPassword(user.LozinkaKorisnika, existingUser.LozinkaKorisnika, existingUser.Salt) == false) 
+                    {
+                        Tuple<string, string> newPassword = HashPassword(user.LozinkaKorisnika);
+                        existingUser.LozinkaKorisnika = newPassword.Item1;
+                        existingUser.Salt = newPassword.Item2;
 
+                    }
 
+                    existingUser.KorisnikId = user.KorisnikId;
+                    existingUser.ImeKorisnika = user.ImeKorisnika;
+                    existingUser.PrezimeKorisnika = user.PrezimeKorisnika;
+                    existingUser.EmailKorisnika = user.EmailKorisnika;
+                    existingUser.KontaktKorisnika = user.KontaktKorisnika;
+                    existingUser.PrvoLogovanje = user.PrvoLogovanje;
+                    existingUser.TimId = user.TimId;
+                    existingUser.UlogaId = user.UlogaId;
+                    
                     context.SaveChanges();
+                    return mapper.Map<UserClass>(existingUser);
                 }
 
                 else
@@ -71,7 +95,9 @@ namespace UserMicroservice.Data
                     throw new KeyNotFoundException($"User with ID {user.KorisnikId} not found");
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) {
+                throw new Exception("Error", ex);
+            }
             
         }
 

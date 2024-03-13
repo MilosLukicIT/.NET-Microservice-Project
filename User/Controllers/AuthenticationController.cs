@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UserMicroservice.Helpers;
 using UserMicroservice.Models;
+using UserMicroservice.ServiceCalls;
+using UserMicroservice.Models.DTO;
+
 
 namespace UserMicroservice.Controllers
 {
@@ -11,11 +14,13 @@ namespace UserMicroservice.Controllers
     {
 
         private readonly IAuthenticationHelper authenticationHelper;
+        private readonly ILoggerService loggerService;
 
 
-        public AuthenticationController(IAuthenticationHelper authenticationHelper)
+        public AuthenticationController(IAuthenticationHelper authenticationHelper, ILoggerService loggerService)
         {
             this.authenticationHelper = authenticationHelper;
+            this.loggerService = loggerService;
         }
 
 
@@ -29,9 +34,11 @@ namespace UserMicroservice.Controllers
             if (authenticationHelper.AuthenticationPrincipal(principal))
             {
                 var tokenString = authenticationHelper.GenerateJwt(principal);
+                loggerService.Log(LogLevel.Information, "Authenticate", "Authentication successfull!");
                 return Ok(new { token = tokenString });
             }
 
+            loggerService.Log(LogLevel.Warning, "Authenticate", "Authentication failed!");
             return Unauthorized();
         }
     }

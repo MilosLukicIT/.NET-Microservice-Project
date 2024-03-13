@@ -40,9 +40,33 @@ namespace UserMicroservice.Data
             context.Remove(userRole);
         }
 
-        public void UpdateUserRole(UserRole userRole)
+        public UserRole UpdateUserRole(UserRole userRole)
         {
+            try
+            {
+                var existingUserRole = context.UserRoles.FirstOrDefault(e => e.UlogaId == userRole.UlogaId);
 
+                if (existingUserRole != null)
+                {
+                    existingUserRole.NazivUloge = userRole.NazivUloge;
+
+                    context.SaveChanges();
+                    return mapper.Map<UserRole>(existingUserRole);
+                }
+
+                else
+                {
+                    throw new KeyNotFoundException($"User with ID {userRole.UlogaId} not found");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error", ex);
+            }
+
+
+
+            return mapper.Map<UserRole>(userRole);
         }
 
        

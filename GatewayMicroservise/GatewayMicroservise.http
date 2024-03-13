@@ -1,6 +1,0 @@
-@GatewayMicroservise_HostAddress = http://localhost:5285
-
-GET {{GatewayMicroservise_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

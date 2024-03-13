@@ -19,10 +19,9 @@ namespace UserMicroservice.Entites
         public bool PrvoLogovanje { get; set; }
 
         public Guid? TimId { get; set; }
-        public Guid? KalendarId { get; set; }
 
         
-        public Guid? UlogaId { get; set; }
+        public Guid UlogaId { get; set; }
         public UserRole? Uloga {  get; set; }
     }
 }

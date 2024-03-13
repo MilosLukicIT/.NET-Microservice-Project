@@ -53,7 +53,6 @@ namespace UserMicroservice.Entites
                     PrvoLogovanje = true,
                     UlogaId = Guid.Parse("6a411c13-a195-48f7-8dbd-67596c397478"),
                     TimId = Guid.Parse("6a411c13-a195-48f7-8dbd-67596c399586"),
-                    KalendarId = Guid.Parse("6a411c13-a195-48f7-8dbd-67596c399700")
                 }
                 )
                 ;

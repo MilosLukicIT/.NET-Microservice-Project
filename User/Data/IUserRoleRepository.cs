@@ -7,7 +7,7 @@ namespace UserMicroservice.Data
         List<UserRole> GetUserRoles();
         UserRole GetUserRoleById(Guid userRoleId);
         UserRole CreateUserRole(UserRole userRole);
-        void UpdateUserRole(UserRole userRole);
+        UserRole UpdateUserRole(UserRole userRole);
         void DeleteUserRole(Guid userRoleId);
         public bool SaveChanges();
     }
